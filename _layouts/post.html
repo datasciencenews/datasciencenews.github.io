@@ -2,30 +2,62 @@
 layout: container
 ---
 
+{% if page.image %}
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark"
+    style="background-size: cover; background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(255, 255, 255, 0) 60%), url({{ page.image }})">
+    <div class="col-md-6 px-0">
+        <h1 class="display-4 font-italic">{{ page.title }}</h1>
+        <p class="lead my-3">
+            {% assign d = page.date | date: "%-d"  %}{% case d %}{% when '1' or '21' or '31' %}{{ d }}st{% when '2' or '22' %}{{ d }}nd{% when '3' or '23' %}{{ d }}rd{% else %}{{ d }}th{% endcase %}
+            {{ page.date | date: "%B, %Y" }}</p>
+    </div>
+</div>
+{% endif %}
+
 <div class="row">
     <div class="col-md-8 blog-post">
+        {% unless page.image %}
         <h2 class="blog-post-title">{{ page.title }}</h2>
         <p class="blog-post-meta">
             {% assign d = page.date | date: "%-d"  %}{% case d %}{% when '1' or '21' or '31' %}{{ d }}st{% when '2' or '22' %}{{ d }}nd{% when '3' or '23' %}{{ d }}rd{% else %}{{ d }}th{% endcase %}
             {{ page.date | date: "%B, %Y" }}</p>
+        {% endunless %}
 
         {{ content }}
     </div>
 
     <aside class="col-md-4 blog-sidebar">
-        <!--<div class="p-4 mb-3 bg-light rounded">
-            <h4 class="font-italic">{{ page.name }} Intro</h4>
-            <p class="mb-0">{{ page.excerpt }}</p>
+        <div class="p-4 mb-3 bg-light rounded">
+            <h4 class="font-italic">Related posts</h4>
+            <ol class="list-unstyled">
+                {% assign firstCategory = page.categories | first %}
+                {% assign relatedCount = 0 %}
+                {% for related in site.categories[firstCategory] %}
+                {% unless page.url == related.url %}
+                {% assign relatedCount = relatedCount | plus: 1 %}
+                <li><a href="{{ related.url }}">{{ related.title }}</a></li>
+                {% endunless %}
+
+                {% if relatedCount == 3 %}
+                {% break %}
+                {% endif %}
+                {% endfor %}
+            </ol>
         </div>
 
-        <!--<div class="p-4">
-            <h4 class="font-italic">Elsewhere</h4>
+        <div class="p-4">
+            <h4 class="font-italic">Related topics</h4>
             <ol class="list-unstyled">
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Facebook</a></li>
+                {% assign sortedCategories = page.categories | sort %}
+                {% assign col = site.collections | where: "label", "category" | first %}
+                {% for catname in sortedCategories %}
+                {% assign cat = col.docs | where: "slug", catname | first %}
+                <li><a href="{{ cat.url }}">{{ cat.name }}</a></li>
+                {% endfor %}
             </ol>
-        </div>-->
+        </div>
+
+        {% include sidebar-morelinks.html %}
     </aside>
 
 </div>

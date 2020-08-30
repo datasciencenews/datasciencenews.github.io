@@ -2,8 +2,7 @@
 layout: base
 ---
 
-{% if paginator.previous_page %}
-{% else %}
+{% unless paginator.previous_page %}
 <div class="container">
     {% assign featured = site.posts | where: "featured", true %}
     {% assign jumbo = featured[0] %}
@@ -16,7 +15,7 @@ layout: base
         {% include subjumbo.html post=subjumbo2 width=6 %}
     </div>
 </div>
-{% endif %}
+{% endunless %}
 
 <main role="main" class="container">
     <div class="row">
@@ -49,6 +48,8 @@ layout: base
             </div>
 
             {% include sidebar-topics.html %}
+
+            {% include sidebar-morelinks.html %}
         </aside>
 
     </div>
