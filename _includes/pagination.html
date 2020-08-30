@@ -1,0 +1,13 @@
+<div class="btn-group mb-4">
+    {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+    <a href="/" class="btn btn-outline-dark">&laquo; Newer</a>
+    {% else %}
+    <a href="{{ paginator.previous_page_path }}" class="btn btn-outline-dark">&laquo; Newer</a>
+    {% endif %}
+    {% endif %}
+    <span class="btn btn-outline-dark disabled">Page {{ paginator.page }}</span>
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="btn btn-outline-dark">Older &raquo;</a>
+    {% endif %}
+</div>

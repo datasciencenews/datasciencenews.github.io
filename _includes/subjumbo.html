@@ -1,0 +1,20 @@
+<div class="col-md-{{ include.width }}">
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            {% assign catname = include.post.categories | first %}
+            {% assign col = site.collections | where: "label", "category" | first %}
+            {% assign cat = col.docs | where: "slug", catname | first %}
+            <strong class="d-inline-block mb-2 text-primary">{{ cat.name }}</strong>
+            <h3 class="mb-0">{{ include.post.title }}</h3>
+            <div class="mb-1 text-muted">
+                {% assign d = include.post.date | date: "%-d"  %}{% case d %}{% when '1' or '21' or '31' %}{{ d }}st{% when '2' or '22' %}{{ d }}nd{% when '3' or '23' %}{{ d }}rd{% else %}{{ d }}th{% endcase %}
+                {{ include.post.date | date: "%B, %Y" }}</div>
+            <p class="card-text mb-auto">{{ include.post.excerpt }}</p>
+            <a href="{{ include.post.url }}" class="stretched-link">Continue reading &raquo;</a>
+        </div>
+        {% if include.post.image %}
+        <div class="col d-none d-lg-block"
+            style="background-size: cover; background-image: url({{ include.post.image }})"></div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,32 @@
+---
+layout: container
+---
+
+<div class="row">
+    <div class="col-md-8 blog-main">
+        <h3 class="pb-4 mb-4 font-italic border-bottom">
+            Latest {% if page.abbr %}{{ page.abbr }}{% else %}{{ page.name }}{% endif %} News
+        </h3>
+
+        {% assign posts = site.categories[page.slug] | limit: 20 %}
+        {% for post in posts %}
+        {% include postitem.html %}
+        {% endfor %}
+
+        <h3 class="pt-4 mt-4 font-italic border-top">
+            About {{ page.name }}
+        </h3>
+
+        {{ page.content }}
+    </div>
+
+    <aside class="col-md-4 blog-sidebar">
+        <div class="p-4 mb-3 bg-light rounded">
+            <h4 class="font-italic">{{ page.name }} Intro</h4>
+            <p class="mb-0">{{ page.excerpt }}</p>
+        </div>
+
+        {% include sidebar-topics.html %}
+    </aside>
+
+</div>

@@ -1,0 +1,56 @@
+---
+layout: base
+---
+
+{% if paginator.previous_page %}
+{% else %}
+<div class="container">
+    {% assign featured = site.posts | where: "featured", true %}
+    {% assign jumbo = featured[0] %}
+    {% assign subjumbo1 = featured[1] %}
+    {% assign subjumbo2 = featured[2] %}
+    {% include jumbo.html post=jumbo %}
+
+    <div class="row mb-2">
+        {% include subjumbo.html post=subjumbo1 width=6 %}
+        {% include subjumbo.html post=subjumbo2 width=6 %}
+    </div>
+</div>
+{% endif %}
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <h3 class="pb-4 mb-4 font-italic border-bottom">
+                {% if paginator.previous_page %}
+                {{ site.name }} - Page {{ paginator.page }}
+                {% else %}
+                Latest {{ site.name }}
+                {% endif %}
+            </h3>
+
+            {% assign skipped = 0 %}
+            {% for post in paginator.posts %}
+            {% if paginator.page == 1 and post.featured and skipped < 3 %}
+            {% assign skipped = skipped | plus: 1 %}
+            {% else %}
+            {% include postitem.html %}
+            {% endif %}
+            {% endfor %}
+
+            {% include pagination.html %}
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="font-italic">About {{ site.name }}</h4>
+                <p class="mb-0">{{ site.long_blurb }}</p>
+                <a href="/about">More</a>
+            </div>
+
+            {% include sidebar-topics.html %}
+        </aside>
+
+    </div>
+
+</main>

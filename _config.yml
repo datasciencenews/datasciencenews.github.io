@@ -1,0 +1,29 @@
+permalink: /data-science/:categories/:year/:title/
+exclude: [Gemfile, README.md]
+paginate: 10
+paginate_path: "/page/:num/"
+plugins: [jekyll-paginate]
+name: Data Science News
+short_blurb: All the latest news, information, videos and articles in the wide world of Data Science.
+long_blurb: Data Science News is a collection of articles, videos and other content from around the web that is relevant to the Data Science industry. Some of it might not necessarily be what you might expect, but the point is to get ideas from a wide variety of areas.
+contact: If you'd like to share a story, advertise, appear on a podcast, or otherwise get in touch, please email
+email: dsn@chris-alexander.co.uk
+collections:
+  category:
+    output: true
+    permalink: /:collection/:name
+defaults:
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      excerpt_separator: <!--more-->

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Chris Alexander">
+    <meta name="description" content="{{ site.short_blurb }}">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{% if post.title %}{{ post.title }} -
+        {% endif %}{{ site.name }}</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Amiri@0700&display=swap" rel="stylesheet">
+    <link href="/styles/blog.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        {% include header.html %}
+
+        {% include nav.html %}
+    </div>
+
+    {{ content }}
+
+    {% include footer.html %}
+</body>
+
+</html>

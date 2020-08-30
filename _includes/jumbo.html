@@ -1,0 +1,10 @@
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark"
+    {% if include.post.image %}style="background-size: cover; background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(255, 255, 255, 0) 60%), url({{ include.post.image }})"
+    {% endif %}>
+    <div class="col-md-6 px-0">
+        <h1 class="display-4 font-italic">{{ include.post.title }}</h1>
+        <p class="lead my-3">{{ include.post.excerpt }}</p>
+        <p class="lead mb-0"><a href="{{ include.post.url }}" class="text-white font-weight-bold">Continue reading
+                &raquo;</a></p>
+    </div>
+</div>

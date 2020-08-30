@@ -1,0 +1,9 @@
+<div class="p-4">
+    <h4 class="font-italic">Hot Topics</h4>
+    <ol class="list-unstyled">
+        {% assign cats = site.category | sort: "order" %}
+        {% for category in cats limit: 5 %}
+        <li><a href="{{ category.url }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ol>
+</div>
