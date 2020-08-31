@@ -4,8 +4,7 @@ paginate: 10
 paginate_path: "/page/:num/"
 plugins: [jekyll-paginate]
 name: Data Science News
-short_blurb: All the latest news, information, videos and articles in the wide world of Data Science.
-long_blurb: Data Science News is a collection of articles, videos and other content from around the web that is relevant to the Data Science industry. We aim to collect articles from a wide variety of sources and across lots of topics to provide thought-provoking and inspiring content to help you solve data science problems innovatively and creatively.
+blurb: All the latest news, information, videos and articles in the wide world of Data Science.
 contact: If you'd like to share a story, advertise, appear on a podcast, or otherwise get in touch, please email
 email: dsn@chris-alexander.co.uk
 author: Chris Alexander
