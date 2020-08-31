@@ -39,6 +39,7 @@ layout: base
             {% for post in paginator.posts %}
             {% if paginator.page == 1 and post.featured and skipped < 3 %}
             {% assign skipped = skipped | plus: 1 %}
+            {% else %}
             {% include postitem.html %}
             {% endif %}
             {% endfor %}
