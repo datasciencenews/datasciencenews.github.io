@@ -27,4 +27,4 @@ defaults:
   - scope:
       path: ""
     values:
-      excerpt_separator: <!--more-->
+      excerpt_separator: <!-- - -->

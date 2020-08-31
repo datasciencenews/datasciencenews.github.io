@@ -7,7 +7,7 @@ Mathematical modelling is about describing systems using mathematical language s
 
 This is quite a broad topic but is included specifically to capture the modelling aspects of Data Science and related areas that might provide some inspiration.
 
-<!--more-->
+<!-- - -->
 
 Here's a video from the Society for Industrial and Applied Mathematics introducing mathematical modelling:
 

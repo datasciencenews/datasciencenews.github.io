@@ -8,7 +8,7 @@ Fundamentally, Machine Learning is an approach to solving problems with computer
 
 ML algorithms build a mathematical model of a problem based on training data, which is then used to make predictions or decisions without being explicitly programmed to make those decisions. The model is then updated as it is used more, and its predictions or decisions are assessed against actual outcomes.
 
-<!--more-->
+<!-- - -->
 
 Machine learning is closely associated with computational statistics, mathematical optimisation, data mining and predictive analytics.
 

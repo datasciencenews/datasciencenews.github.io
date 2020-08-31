@@ -6,7 +6,7 @@ order: 10
 
 AI most commonly refers to machines or computers that are able to mimic cognitive functions that are usually associated with a biological brain, such as learning or problem solving.
 
-<!--more-->
+<!-- - -->
 
 Artificial Intelligence is also know as Machine Intelligence, and is contrasted with Natural Intelligence, which is what you would expect in a biological brain.
 

@@ -7,7 +7,7 @@ Cloud Computing is a technology which allows companies and consumers to easily p
 
 This technology has been a huge benefit to Data Science as it has facilitated cost-effective access to vast compute which would have previously been financially impossible.
 
-<!--more-->
+<!-- - -->
 
 There are a huge number of providers of Cloud computing services, but the big three are Amazon (Amazon Web Services, AWS), Microsoft (Azure) and Google (Google Cloud Platform).
 

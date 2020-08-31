@@ -8,7 +8,7 @@ Statistics is all about the collection, organisation, analysis, interpretation a
 
 Stats is an ancient art, and includes the designing of surveys or experiments in order to collect the appropriate data for analysis.
 
-<!--more-->
+<!-- - -->
 
 Of course, statistics can be used to mis-represent findings with subtly incorrect analysis, either deliberately or by accident.
 

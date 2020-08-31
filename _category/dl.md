@@ -8,7 +8,7 @@ Deep learning is a subset of machine learning that is based on artificial neural
 
 Deep learning can take the supervised, semi-supervised, or unsupervised approach.
 
-<!--more-->
+<!-- - -->
 
 Deep learning techniques have been around for many years, but the use of these techniques has expanded significantly in recent years due to the combination of:
 
