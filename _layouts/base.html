@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Chris Alexander">
     <meta name="description" content="{{ site.short_blurb }}">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{% if post.title %}{{ post.title }} -
+    <title>{% if page.abbr %}{{ page.abbr }} - {% elsif page.title %}{{ page.title }} -
+        {% elsif post.title %}{{ post.title }} -
         {% endif %}{{ site.name }}</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
