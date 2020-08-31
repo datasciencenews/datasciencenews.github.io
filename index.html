@@ -8,11 +8,18 @@ layout: base
     {% assign jumbo = featured[0] %}
     {% assign subjumbo1 = featured[1] %}
     {% assign subjumbo2 = featured[2] %}
+
+    {% if jumbo %}
     {% include jumbo.html post=jumbo %}
+    {% endif %}
 
     <div class="row mb-2">
+        {% if subjumbo2 %}
         {% include subjumbo.html post=subjumbo1 width=6 %}
         {% include subjumbo.html post=subjumbo2 width=6 %}
+        {% elsif subjumbo1 %}
+        {% include subjumbo.html post=subjumbo1 width=12 %}
+        {% endif %}
     </div>
 </div>
 {% endunless %}
@@ -32,7 +39,6 @@ layout: base
             {% for post in paginator.posts %}
             {% if paginator.page == 1 and post.featured and skipped < 3 %}
             {% assign skipped = skipped | plus: 1 %}
-            {% else %}
             {% include postitem.html %}
             {% endif %}
             {% endfor %}
